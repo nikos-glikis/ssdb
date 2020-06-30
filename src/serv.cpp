@@ -234,12 +234,12 @@ int SSDBServer::slaveof(const std::string &id, const std::string &host, int port
 }
 
 int SSDBServer::set_kv_range(const std::string &start, const std::string &end){
-	if(meta->hset("key_range", "kv_s", start) == -1){
-		return -1;
-	}
-	if(meta->hset("key_range", "kv_e", end) == -1){
-		return -1;
-	}
+//	if(meta->hset("key_range", "kv_s", start) == -1){
+//		return -1;
+//	}
+//	if(meta->hset("key_range", "kv_e", end) == -1){
+//		return -1;
+//	}
 
 	kv_range_s = start;
 	kv_range_e = end;

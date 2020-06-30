@@ -207,7 +207,7 @@ std::vector<std::string> SSDBImpl::info(){
 }
 
 void SSDBImpl::compact(){
-	//ldb->CompactRange(NULL, NULL);
+	ldb->CompactRange(NULL, NULL);
 }
 
 int SSDBImpl::key_range(std::vector<std::string> *keys){
