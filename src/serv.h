@@ -36,7 +36,7 @@ public:
 
 	SSDBServer(SSDB *ssdb, SSDB *meta, const Config &conf, NetworkServer *net);
 	~SSDBServer();
-	
+
 	int slaveof(const std::string &id, const std::string &host, int port, const std::string &auth, uint64_t last_seq, const std::string &last_key, bool is_mirror, int recv_timeout);
 
 	int set_kv_range(const std::string &s, const std::string &e);

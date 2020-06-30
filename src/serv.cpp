@@ -191,15 +191,15 @@ SSDBServer::SSDBServer(SSDB *ssdb, SSDB *meta, const Config &conf, NetworkServer
 	}
 
 	// load kv_range
-//	int ret = this->get_kv_range(&this->kv_range_s, &this->kv_range_e);
-//	if(ret == -1){
-//		log_fatal("load key_range failed!");
-//		exit(1);
-//	}
-//	log_info("key_range.kv: \"%s\", \"%s\"",
-//		str_escape(this->kv_range_s).c_str(),
-//		str_escape(this->kv_range_e).c_str()
-//		);
+	int ret = this->get_kv_range(&this->kv_range_s, &this->kv_range_e);
+	if(ret == -1){
+		log_fatal("load key_range failed!");
+		exit(1);
+	}
+	log_info("key_range.kv: \"%s\", \"%s\"",
+		str_escape(this->kv_range_s).c_str(),
+		str_escape(this->kv_range_e).c_str()
+		);
 }
 
 SSDBServer::~SSDBServer(){
@@ -234,12 +234,12 @@ int SSDBServer::slaveof(const std::string &id, const std::string &host, int port
 }
 
 int SSDBServer::set_kv_range(const std::string &start, const std::string &end){
-//	if(meta->hset("key_range", "kv_s", start) == -1){
-//		return -1;
-//	}
-//	if(meta->hset("key_range", "kv_e", end) == -1){
-//		return -1;
-//	}
+	if(meta->hset("key_range", "kv_s", start) == -1){
+		return -1;
+	}
+	if(meta->hset("key_range", "kv_e", end) == -1){
+		return -1;
+	}
 
 	kv_range_s = start;
 	kv_range_e = end;
