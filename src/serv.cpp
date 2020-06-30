@@ -196,10 +196,10 @@ SSDBServer::SSDBServer(SSDB *ssdb, SSDB *meta, const Config &conf, NetworkServer
 //		log_fatal("load key_range failed!");
 //		exit(1);
 //	}
-	log_info("key_range.kv: \"%s\", \"%s\"",
-		str_escape(this->kv_range_s).c_str(),
-		str_escape(this->kv_range_e).c_str()
-		);
+//	log_info("key_range.kv: \"%s\", \"%s\"",
+//		str_escape(this->kv_range_s).c_str(),
+//		str_escape(this->kv_range_e).c_str()
+//		);
 }
 
 SSDBServer::~SSDBServer(){
