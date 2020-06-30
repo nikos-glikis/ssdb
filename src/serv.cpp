@@ -191,11 +191,11 @@ SSDBServer::SSDBServer(SSDB *ssdb, SSDB *meta, const Config &conf, NetworkServer
 	}
 
 	// load kv_range
-	int ret = this->get_kv_range(&this->kv_range_s, &this->kv_range_e);
-	if(ret == -1){
-		log_fatal("load key_range failed!");
-		exit(1);
-	}
+//	int ret = this->get_kv_range(&this->kv_range_s, &this->kv_range_e);
+//	if(ret == -1){
+//		log_fatal("load key_range failed!");
+//		exit(1);
+//	}
 	log_info("key_range.kv: \"%s\", \"%s\"",
 		str_escape(this->kv_range_s).c_str(),
 		str_escape(this->kv_range_e).c_str()
